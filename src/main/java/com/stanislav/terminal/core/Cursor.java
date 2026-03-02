@@ -1,6 +1,4 @@
-package com.stanislav.terminal;
-
-import static java.lang.Math.clamp;
+package com.stanislav.terminal.core;
 
 public final class Cursor {
     private int row;
@@ -18,6 +16,24 @@ public final class Cursor {
     public void setCursor(final int row, final int col) {
         this.col = clamp(col, 0, maxWidth - 1);
         this.row = clamp(row, 0, maxHeight - 1);
+    }
+
+    /**
+     * Clamp function for the limitations of the screen
+     *
+     * @param value - given value
+     * @param min - left margin
+     * @param max - right margin
+     * @return the clamped value
+     */
+    private static int clamp(final int value, final int min, final int max) {
+        if (value < min)
+            return min;
+
+        if (value > max)
+            return max;
+
+        return value;
     }
 
     public int getCol() {

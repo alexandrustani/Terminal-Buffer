@@ -1,4 +1,4 @@
-package com.stanislav.terminal;
+package com.stanislav.terminal.model;
 
 import java.util.Objects;
 
@@ -11,6 +11,12 @@ public final class Cell {
         this.attr = Objects.requireNonNull(newAttr);
     }
 
+    /**
+     * Static method that creates an empty cell with a given Attribute
+     *
+     * @param attr - the given Attribute
+     * @return an empty cell
+     */
     public static Cell empty(Attribute attr) {
         return new Cell('\0', attr);
     }

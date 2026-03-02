@@ -1,4 +1,4 @@
-package com.stanislav.terminal;
+package com.stanislav.terminal.model;
 
 import java.util.Objects;
 
@@ -12,15 +12,12 @@ public class Line {
         Objects.requireNonNull(defaultAttr);
 
         this.cells = new Cell[width];
+
         for (int i = 0; i < width; i++)
             cells[i] = Cell.empty(defaultAttr);
     }
 
-    public int width() {
-        return cells.length;
-    }
-
-    public Cell cell(int col) {
+    public Cell cell(final int col) {
         return cells[col];
     }
 
